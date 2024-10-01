@@ -179,18 +179,19 @@ document.addEventListener("DOMContentLoaded", function () {
       const row = document.createElement("tr");
       row.setAttribute("data-index", index);
 
+      row.setAttribute("data-index", index);
+
       row.innerHTML = `
-        <th scope="row"><i class="bi bi-check-circle"></i></th>
-        <td contenteditable="true" class="editable-cell"> ${item.id} ${item.chemical_name}</td>
+        <th scope="row"><i class="bi bi-check"></i></th>
+        <td contenteditable="true" class="editable-cell">${item.id} ${item.chemical_name}</td>
         <td contenteditable="true" class="editable-cell">${item.vendor}</td>
-        <td contenteditable="true" class="editable-cell">${item.density}</td>
-        <td contenteditable="true" class="editable-cell">${item.viscosity}</td>
+        <td><input type="number" class="editable-cell density-input form-control" value="${item.density}"></td>
+        <td><input type="number" class="editable-cell viscosity-input form-control" value="${item.viscosity}"></td>
         <td contenteditable="true" class="editable-cell">${item.packaging}</td>
         <td contenteditable="true" class="editable-cell">${item.pack_size}</td>
         <td contenteditable="true" class="editable-cell">${item.unit}</td>
-        <td contenteditable="true" class="editable-cell">${item.quantity}</td>
+        <td><input type="number" class="editable-cell quantity-input form-control" value="${item.quantity}"></td>
       `;
-
       // Click event to select row
       row.addEventListener("click", () => {
         if (selectedRow !== null) {
@@ -222,6 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     chemicalData.push(newRow);
     createTableRows(chemicalData);
+    alert("New row added!");
   });
 
   // Move selected row up
@@ -234,6 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
           chemicalData[index],
         ];
         createTableRows(chemicalData);
+        alert("Row moved up!");
       }
     }
   });
@@ -248,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
           chemicalData[index],
         ];
         createTableRows(chemicalData);
+        alert("Row moved down!");
       }
     }
   });
@@ -259,12 +263,14 @@ document.addEventListener("DOMContentLoaded", function () {
       chemicalData.splice(index, 1);
       createTableRows(chemicalData);
       selectedRow = null; // Deselect after deleting
+      alert("Row deleted!");
     }
   });
 
   // Refresh Data
   document.getElementById("refreshData").addEventListener("click", () => {
     createTableRows(chemicalData);
+    alert("Data refreshed!");
   });
 
   // // Save Data (Optional, for now just a console log)
@@ -274,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       console.error("Error saving data:", error);
     }
+    alert("Data saved successfully!");
   });
 
   // Inline Editing: Update the data on cell change

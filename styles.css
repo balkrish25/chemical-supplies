@@ -2,6 +2,25 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.table th:nth-child(2) {
+  border-right: 1px solid #eaeaea; /* Light grey line */
+}
+.table td:nth-child(2) {
+  border-right: 1px solid #eaeaea; /* Light grey line */
+}
+.table th {
+  font-weight: normal; /* Make header text normal (not bold) */
+}
+
+.table thead th {
+  border-bottom: none; /* Remove bottom border from the header cells */
+}
+
+#chemicalTable th i,
+#chemicalTable td i {
+  font-size: 1.5rem;
+}
+
 .table-container {
   display: flex;
   justify-content: space-between;
