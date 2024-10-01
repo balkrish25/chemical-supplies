@@ -11,11 +11,14 @@ body {
 .toolbar {
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
 }
 
 .table-wrapper {
   width: 100%;
+}
+
+.toolbar {
+  margin-bottom: 10px;
 }
 
 .toolbar-wrapper {
@@ -32,10 +35,7 @@ body {
 
 .table {
   border: 1px solid #dee2e6;
-  width: 100%;
-  border-collapse: collapse;
 }
-
 .square-box {
   width: 50px;
   height: 50px;
@@ -50,113 +50,4 @@ body {
 
 th small {
   display: block;
-}
-
-/* Media Queries for Responsiveness */
-
-/* Base styles for mobile devices (default styles) */
-body {
-  font-size: 14px;
-  padding: 10px;
-}
-
-table thead {
-  display: none; /* Hide headers for small screens */
-}
-
-table tbody tr {
-  display: block;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #dee2e6;
-  padding: 10px;
-}
-
-table tbody td {
-  display: block;
-  text-align: right;
-  position: relative;
-  padding-left: 50%;
-}
-
-table tbody td:before {
-  content: attr(data-label);
-  position: absolute;
-  left: 10px;
-  text-align: left;
-  font-weight: bold;
-}
-
-.toolbar {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.toolbar button {
-  margin-bottom: 5px;
-}
-
-/* Media query for tablets (min-width: 768px) */
-@media (min-width: 768px) {
-  body {
-    font-size: 16px;
-    padding: 20px;
-  }
-
-  table thead {
-    display: table-header-group; /* Show headers for larger screens */
-  }
-
-  table tbody tr {
-    display: table-row;
-    margin-bottom: 0;
-    border-bottom: none;
-  }
-
-  table tbody td {
-    display: table-cell;
-    text-align: left;
-    padding: 10px;
-  }
-
-  table tbody td:before {
-    display: none;
-  }
-
-  .toolbar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .toolbar button {
-    margin-bottom: 0;
-    margin-right: 10px;
-  }
-}
-.example {
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  transform: rotate(30deg);
-}
-
-/* Media query for desktops (min-width: 1024px) */
-@media (min-width: 1024px) {
-  body {
-    font-size: 18px;
-    padding: 40px;
-  }
-
-  table {
-    width: 80%; /* Allow more space on the sides */
-    margin: 0 auto;
-  }
-
-  .toolbar {
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  .toolbar button {
-    margin-right: 15px;
-  }
 }
