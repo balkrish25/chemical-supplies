@@ -1,0 +1,53 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.table-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+}
+
+.table-wrapper {
+  width: 100%;
+}
+
+.toolbar {
+  margin-bottom: 10px;
+}
+
+.toolbar-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.table td,
+.table th {
+  border: none;
+}
+
+.table {
+  border: 1px solid #dee2e6;
+}
+.square-box {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+th small {
+  display: block;
+}
